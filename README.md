@@ -2,15 +2,26 @@
 ## windows 直接解压执行bat
 ## 服务器
 * 用ssh连接软件连接服务器
+
+```Bash
+以下脚本不建议在公网ip使用
+适用于本地
+main.sh 用于将CloudflareST生成优选ip存到.env中的      
+v2ray.js 用于将.env通过http://localhost:3000/返回   
+
+git clone http://gitproxy.mrhjx.cn/https://github.com/StarzL1kerain/CloudflareST.git
+cd CloudflareST
+npm i
+sudo apt-get install gawk -y && sudo apt-get install coreutils -y
+chmod +x main.sh
+pm2 start v2ray.js
+pm2 restart v2ray.js --cron "0 1,7,13,18 * * *"
+pm2 save   
+```
 ```Bash
 不推荐root用户
 pwd
 控制台输出 /home/kerain
-
-# 如果是第一次使用，则建议创建新文件夹（后续更新请跳过该步骤）
-mkdir CloudflareST
-# 进入文件夹（后续更新，只需要从这里重复下面的下载、解压命令即可）
-cd CloudflareST
 
 # 下载 CloudflareST 压缩包（自行根据需求替换 URL 中版本号和文件名）
 wget -N http://gitproxy.mrhjx.cn/https://github.com/StarzL1kerain/CloudflareST/releases/download/v1.0.0/CloudflareST_linux_armv5.tar
@@ -30,17 +41,22 @@ chmod +x CloudflareST && chmod +x CloudflareST.sh
 # 香港ip
 ./CloudflareST -url https://hkcs.cloudflarest.link -sl 3 -tl 200 -dn 10
 
-
+sudo reboot
 ```
 ### 添加定时
 
 * 0 6 * * * 0代表分6代表小时，意思是6：00整开始运行脚本
 ```
 crontab -e
-0 0 * * * /home/kerain/CloudflareST/CloudflareST.sh
-0 6 * * * /home/kerain/CloudflareST/CloudflareST.sh
-0 12 * * * /home/kerain/CloudflareST/CloudflareST.sh
-0 18 * * * /home/kerain/CloudflareST/CloudflareST.sh
+0 0 * * * cd /home/kerain/CloudflareST && ./CloudflareST.sh
+0 6 * * * cd /home/kerain/CloudflareST && ./CloudflareST.sh
+0 12 * * * cd /home/kerain/CloudflareST && ./CloudflareST.sh
+0 18 * * * cd /home/kerain/CloudflareST && ./CloudflareST.sh
+0 1 * * * cd /home/kerain/CloudflareST && ./main.sh
+0 7 * * * cd /home/kerain/CloudflareST && ./main.sh
+0 13 * * * cd /home/kerain/CloudflareST && ./main.sh
+0 19 * * * cd /home/kerain/CloudflareST && ./main.sh
+
 当前的 crontab 配置
 crontab -l
 查看 crontab 日志
@@ -50,21 +66,7 @@ grep CRON /var/log/syslog
 
 
 
-```
-以下脚本不建议在公网ip使用
-main.sh 用于将CloudflareST生成优选ip存到.env中的      
-v2ray.js 用于将.env通过http://localhost:3000/返回   
 
-git clone http://gitproxy.mrhjx.cn/https://github.com/StarzL1kerain/CloudflareST.git
-npm i
-sudo apt-get install gawk -y && sudo apt-get install coreutils -y
-chmod +x main.sh
-pm2 start v2ray.js
-pm2 restart v2ray.js --cron "0 1,7,13,18 * * *"
-pm2 save   
-sudo reboot
-适用于本地
-```
 
 
 ## 修改于CloudflareSpeedTest
