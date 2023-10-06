@@ -8,12 +8,12 @@ pwd
 控制台输出 /home/kerain
 
 # 如果是第一次使用，则建议创建新文件夹（后续更新请跳过该步骤）
-mkdir /home/kerain/CloudflareST
+mkdir CloudflareST
 # 进入文件夹（后续更新，只需要从这里重复下面的下载、解压命令即可）
-cd /home/kerain/CloudflareST
+cd CloudflareST
 
 # 下载 CloudflareST 压缩包（自行根据需求替换 URL 中版本号和文件名）
-wget -N http://gitproxy.mrhjx.cn/
+wget -N http://gitproxy.mrhjx.cn/https://github.com/StarzL1kerain/CloudflareST/releases/download/v1.0.0/CloudflareST_linux_armv5.tar
 
 # 解压（不需要删除旧文件，会直接覆盖，自行根据需求替换 文件名）
 tar -xvf CloudflareST_linux_armv5.tar && rm CloudflareST_linux_armv5.tar
@@ -48,6 +48,11 @@ grep CRON /var/log/syslog
 
 ```
 
+
+一下脚本不建议在公网ip使用
+main.sh 用于将CloudflareST生成优选ip存到.env中的
+v2ray.js 用于将.env通过http://localhost:3000/返回
+适用于本地
 
 ```
 ## 修改于CloudflareSpeedTest
