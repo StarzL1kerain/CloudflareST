@@ -1,7 +1,8 @@
 #!/bin/bash
 
 # ip格式化
-column_data=$(awk -F, '{print $1}' result.csv)
+column_data=$(tail -n +2 result.csv | awk -F, '{print $1}')
+
 vless_links=""
 uuid=''
 domain=""
