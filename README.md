@@ -49,10 +49,13 @@ grep CRON /var/log/syslog
 ```
 
 
-一下脚本不建议在公网ip使用
-main.sh 用于将CloudflareST生成优选ip存到.env中的
-v2ray.js 用于将.env通过http://localhost:3000/返回
+
+```
+以下脚本不建议在公网ip使用
+main.sh 用于将CloudflareST生成优选ip存到.env中的      
+v2ray.js 用于将.env通过http://localhost:3000/返回       
 适用于本地
+```
 
 ```
 ## 修改于CloudflareSpeedTest
