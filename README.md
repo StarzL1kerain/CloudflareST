@@ -52,12 +52,14 @@ grep CRON /var/log/syslog
 
 ```
 以下脚本不建议在公网ip使用
+git cline http://gitproxy.mrhjx.cn/https://github.com/StarzL1kerain/CloudflareST.git
 main.sh 用于将CloudflareST生成优选ip存到.env中的      
 v2ray.js 用于将.env通过http://localhost:3000/返回       
 适用于本地
 ```
 
-```
+
 ## 修改于CloudflareSpeedTest
+```
 * 请参考 [CloudflareSpeedTest](https://github.com/XIU2/CloudflareSpeedTest)
 ```
