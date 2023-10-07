@@ -15,7 +15,9 @@ npm i
 sudo apt-get install gawk -y && sudo apt-get install coreutils -y
 chmod +x main.sh
 pm2 start v2ray.js
-pm2 restart v2ray.js --cron "0 1,7,13,18 * * *"
+    # 待测试
+    pm2 restart v2ray.js --cron "0 1,7,13,19 * * *"
+    pm2 schedule restart "0 1,7,13,19 * * *" v2ray.js
 pm2 save   
 ```
 ```Bash
@@ -52,10 +54,10 @@ crontab -e
 0 6 * * * cd /home/kerain/CloudflareST && ./CloudflareST.sh
 0 12 * * * cd /home/kerain/CloudflareST && ./CloudflareST.sh
 0 18 * * * cd /home/kerain/CloudflareST && ./CloudflareST.sh
-0 1 * * * cd /home/kerain/CloudflareST && ./main.sh
-0 7 * * * cd /home/kerain/CloudflareST && ./main.sh
-0 13 * * * cd /home/kerain/CloudflareST && ./main.sh
-0 19 * * * cd /home/kerain/CloudflareST && ./main.sh
+30 0 * * * cd /home/kerain/CloudflareST && ./main.sh
+30 6 * * * cd /home/kerain/CloudflareST && ./main.sh
+30 12 * * * cd /home/kerain/CloudflareST && ./main.sh
+30 18 * * * cd /home/kerain/CloudflareST && ./main.sh
 
 当前的 crontab 配置
 crontab -l
