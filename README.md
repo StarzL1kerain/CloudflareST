@@ -24,16 +24,24 @@ sh down.sh
 # 赋予执行权限
 # chmod +x CloudflareST && chmod +x CloudflareST.sh
 # 首次建议测试一下
-./CloudflareST.sh
+任选其一
+- ./CloudflareST.sh
+- bash ./CloudflareST.sh
 
 # npm install -g pm2
 pm2 start v2ray.js
-pm2 save
-
-部分用户可能需要再输一行指令
-比如 看pm2 提示
-# pm2 stasudo env PATH=$PATH:/usr/bin /usr/lib/node_modules/pm2/bin/pm2 startup systemd -u ubuntu --hp /home/ubuntu
+curl 127.0.0.1:2016
 ```
+![Alt text](image/curl.png)
+`pm2 save`
+设置开机自启
+`pm2 startup`
+部分用户可能需要再输一行指令
+看pm2 提示
+比如 
+`pm2 stasudo env PATH=$PATH:/usr/bin /usr/lib/node_modules/pm2/bin/pm2 startup systemd -u ubuntu --hp /root`
+![Alt text](image/startup.png)
+
 
 
 
