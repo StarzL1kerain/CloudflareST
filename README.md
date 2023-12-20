@@ -16,6 +16,7 @@ npm i
 # 下载 CloudflareST 压缩包（自行根据需求替换 URL 中版本号和文件名）
 # 支持x86_64,Linux 64位,aarch64一键下载解压
 # 运行 down.sh (win10在git bash执行)
+参考.env.example创建.env文件
 sh down.sh 
 # 赋予执行权限
 # chmod +x CloudflareST && chmod +x CloudflareST.sh
