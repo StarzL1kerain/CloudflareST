@@ -34,6 +34,10 @@ sh down.sh
 # npm install -g pm2
 pm2 start v2ray.js
 curl 127.0.0.1:2016
+
+定时CloudflareST.sh
+crontab -e
+0 */6 * * *  ~/CloudflareST/CloudflareST.sh
 ```
 ![Alt text](image/curl.png)
 `pm2 save`
