@@ -24,6 +24,9 @@ sh down.sh
 # 赋予执行权限
 # chmod +x CloudflareST && chmod +x CloudflareST.sh
 # 首次建议测试一下
+修改CloudflareST.sh文件的cd ~/CloudflareST/
+改为你自己的对应目录
+默认在当前用户目录下
 任选其一
 - ./CloudflareST.sh
 - bash ./CloudflareST.sh
@@ -41,8 +44,6 @@ curl 127.0.0.1:2016
 比如 
 `pm2 stasudo env PATH=$PATH:/usr/bin /usr/lib/node_modules/pm2/bin/pm2 startup systemd -u ubuntu --hp /root`
 ![Alt text](image/startup.png)
-
-
 
 
 ## 修改于CloudflareSpeedTest
