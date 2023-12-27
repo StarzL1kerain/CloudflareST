@@ -1,7 +1,7 @@
 #!/bin/bash
 cd ~/CloudflareST/
 # 生成一个0到2之间的随机数
-random_number=$((RANDOM % 4))
+random_number=$((RANDOM % 3))
 
 # 根据随机数执行相应的命令
 case $random_number in
@@ -13,8 +13,5 @@ case $random_number in
     ;;
   2)
     ./CloudflareST -url https://hkcs.cloudflarest.link -sl 1 -tl 300 -dn 10
-    ;;
-  3)
-    ./CloudflareST -sl 1 -dn 10
     ;;
 esac
